@@ -1,11 +1,11 @@
 package gpsModule.controller;
 
-import com.jsoniter.output.JsonStream;
 import gpsModule.service.IGpsService;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,14 +18,14 @@ public class GpsController {
     IGpsService gpsService;
 
     @RequestMapping("/getUserLocation")
-    public String getUserLocation(UUID userId){
+    public VisitedLocation getUserLocation(@RequestParam UUID userId){
         VisitedLocation visitedLocation = gpsService.getUserLocation(userId);
-        return JsonStream.serialize(visitedLocation);
+        return visitedLocation;
     }
 
     @RequestMapping("/getAttractions")
-    public String getAttractions() {
+    public List<Attraction> getAttractions() {
         List<Attraction> allAttractions = gpsService.getAttractions();
-        return JsonStream.serialize(allAttractions);
+        return allAttractions;
     }
 }

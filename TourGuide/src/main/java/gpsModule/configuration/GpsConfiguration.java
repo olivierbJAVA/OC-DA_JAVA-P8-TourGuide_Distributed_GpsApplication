@@ -14,8 +14,4 @@ public class GpsConfiguration {
 		return new GpsUtil();
 	}
 
-	@Bean
-	public IGpsService getGpsService() {
-		return new GpsServiceImpl(getGpsUtil());
-	}
 }
