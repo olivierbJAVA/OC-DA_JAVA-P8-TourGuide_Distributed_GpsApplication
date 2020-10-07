@@ -18,7 +18,7 @@ public class GpsController {
     private Logger logger = LoggerFactory.getLogger(GpsController.class);
 
     @Autowired
-    IGpsService gpsService;
+    private IGpsService gpsService;
 
     @GetMapping("/getUserLocation")
     public VisitedLocation getUserLocation(@RequestParam String userId){
