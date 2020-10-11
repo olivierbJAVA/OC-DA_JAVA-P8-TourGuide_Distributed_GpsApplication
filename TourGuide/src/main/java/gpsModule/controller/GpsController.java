@@ -5,7 +5,6 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +16,11 @@ import java.util.UUID;
 public class GpsController {
     private Logger logger = LoggerFactory.getLogger(GpsController.class);
 
-    @Autowired
-    private IGpsService gpsService;
+    private final IGpsService gpsService;
+
+    public GpsController(IGpsService gpsService) {
+        this.gpsService = gpsService;
+    }
 
     @GetMapping("/getUserLocation")
     public VisitedLocation getUserLocation(@RequestParam String userId){
