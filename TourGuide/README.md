@@ -85,10 +85,10 @@ In this file, you can manage the logging level and the sever listening port
 
 The following EndPoints are exposed by the GPS Service :
 
-- GET  <http://localhost:8080/getUserLocation> : provide the location (being composed of latitude and longitude) of a user
+- GET  <http://localhost:8081/getUserLocation> : provide the location (being composed of latitude and longitude) of a user
 >Request Parameter : *userName* = name of the user 
 
-- GET  <http://localhost:8080/getAttractions> : provide the list of all available attractions
+- GET  <http://localhost:8081/getAttractions> : provide the list of all available attractions
 
 ### Docker container deployment
 
