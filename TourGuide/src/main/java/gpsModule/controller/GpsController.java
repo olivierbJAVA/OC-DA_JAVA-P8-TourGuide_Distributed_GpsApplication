@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Controller in charge of managing the endpoints for the GPS service.
+ */
 @RestController
 public class GpsController {
     private Logger logger = LoggerFactory.getLogger(GpsController.class);
@@ -22,6 +25,12 @@ public class GpsController {
         this.gpsService = gpsService;
     }
 
+    /**
+     * Method managing the GET "/getUserLocation" endpoint HTTP request to get the location of a user.
+     *
+     * @param userId The id of the user
+     * @return The visited location of the user
+     */
     @GetMapping("/getUserLocation")
     public VisitedLocation getUserLocation(@RequestParam String userId){
         logger.debug("Request getUserLocation");
@@ -30,6 +39,11 @@ public class GpsController {
         return visitedLocation;
     }
 
+    /**
+     * Method managing the GET "/getAttractions" endpoint HTTP request to get the location of a user.
+     *
+     * @return The list of all locations
+     */
     @GetMapping("/getAttractions")
     public List<Attraction> getAttractions() {
         logger.debug("Request getAttractions");
