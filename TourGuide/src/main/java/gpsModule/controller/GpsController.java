@@ -40,9 +40,9 @@ public class GpsController {
     }
 
     /**
-     * Method managing the GET "/getAttractions" endpoint HTTP request to get the location of a user.
+     * Method managing the GET "/getAttractions" endpoint HTTP request to get all the attractions.
      *
-     * @return The list of all locations
+     * @return The list of all attractions
      */
     @GetMapping("/getAttractions")
     public List<Attraction> getAttractions() {
